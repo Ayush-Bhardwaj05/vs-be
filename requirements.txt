@@ -1,0 +1,40 @@
+# Core FastAPI & Web
+fastapi==0.110.2
+uvicorn==0.29.0
+python-multipart==0.0.9
+pydantic==2.7.2
+pydantic_core==2.18.2
+starlette==0.37.2
+
+# Machine Learning Core
+tensorflow==2.15.1  # Match your exact local version
+scikit-learn==1.6.1
+numpy==1.26.4  # Pinned for mediapipe compatibility
+scipy==1.15.2
+librosa==0.10.2
+joblib==1.4.2
+threadpoolctl==3.6.0
+numba==0.59.1
+
+# Audio Processing
+pydub==0.25.1
+soundfile==0.12.1
+audioread==3.0.1
+
+# Database
+motor==3.3.2
+pymongo==4.6.2
+
+# Security & Authentication
+passlib[bcrypt]==1.7.4
+pyjwt==2.8.0
+bcrypt==4.1.2
+
+# AWS Deployment Essentials
+anyio==4.3.0
+httpx==0.27.0
+click==8.1.7
+
+# Optional (remove if unused)
+google-generativeai==0.3.2
+Flask==3.0.2  # Only if actually used
