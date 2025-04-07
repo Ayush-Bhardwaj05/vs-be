@@ -1,3 +1,5 @@
 env
 recordings
 modelsenv/
+venv
+venv/
