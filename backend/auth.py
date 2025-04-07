@@ -16,3 +16,13 @@ def verify_token(token: str = Depends(oauth2_scheme)):
         return username
     except jwt.PyJWTError:
         raise HTTPException(status_code=401, detail="Invalid token")
+    
+def decode_token(token: str):
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        email = payload.get("email")
+        if email is None:
+            raise HTTPException(status_code=401, detail="Email not found in token")
+        return email
+    except jwt.PyJWTError:
+        raise HTTPException(status_code=401, detail="Invalid token")

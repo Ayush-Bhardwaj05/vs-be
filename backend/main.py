@@ -7,7 +7,8 @@ from auth import verify_token
 from motor.motor_asyncio import AsyncIOMotorClient
 from routes.predict import router as predict_router
 from routes.predict_indian import router as predict2_router
-
+from routes.emotion_route import router as emotion_router
+from routes.video_routes import router as video_router
 app = FastAPI()
 
 # Add CORS middleware configuration
@@ -28,7 +29,8 @@ app.include_router(convo_router)
 app.include_router(auth_router)
 app.include_router(predict_router)
 app.include_router(predict2_router)
-
+app.include_router(emotion_router)
+app.include_router(video_router)
 DATABASE_URL = "mongodb+srv://harshdaftari:harshdaftari123@cluster0.cz6dg.mongodb.net/"
 DATABASE_NAME = "my_database"
 COLLECTION_NAME = "my_collection"
